@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1119">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://marek.feliks.fr/">
   <meta name="description" content="A journey from Poland to the French Foreign Legion, from military communications to voice backbone technology. The interactive story of Marek Feliks.">
   <title>FELIKS — A Journey Through Two Worlds</title>
   <link rel="stylesheet" href="./css/style.css">
@@ -24,24 +26,24 @@
         <span class="header-center">AN INTERACTIVE BIOGRAPHY</span>
         <a class="header-link" href="#afterword">THE PERSON BEHIND THE STORY <span aria-hidden="true">↗</span></a>
       </header>
-      <div class="scene-info" aria-hidden="true"><span>ARCHIVE / MF</span><span id="side-index">01—11</span></div>
+      <div class="scene-info" aria-hidden="true"><span>ARCHIVE / MF</span><span id="side-index">01—17</span></div>
       <div class="chapter-content" id="chapter-content" aria-live="polite" aria-atomic="true">
         <div class="eyebrow"><span class="eyebrow-line"></span><span id="act-label">ACT I · THE DEPARTURE</span></div>
-        <p class="place" id="place-label">POLAND → FRANCE</p>
-        <h1 id="chapter-title">The decision to leave.</h1>
-        <p class="narration" id="narration">One plane. One departure. A step into a country where everything would be new.</p>
+        <p class="place" id="place-label">POLAND → FRANCE · AUGUST 2009</p>
+        <h1 id="chapter-title">A decision to change.</h1>
+        <p class="narration" id="narration">In August 2009, I left Poland by plane for France. I wanted structure, discipline, and a clear purpose.</p>
         <span class="chapter-accent" aria-hidden="true"></span>
       </div>
       <div class="film-footer">
         <div class="timeline-top">
-          <div class="timeline-title">THE JOURNEY <span class="muted">/ 11 CHAPTERS</span></div>
-          <div class="timecode"><span id="chapter-number">01</span><span class="timecode-separator"> / </span><span>11</span></div>
+          <div class="timeline-title">THE JOURNEY <span class="muted">/ <span id="chapter-count">17</span> CHAPTERS</span></div>
+          <div class="timecode"><span id="chapter-number">01</span><span class="timecode-separator"> / </span><span id="chapter-total">17</span></div>
         </div>
         <div class="scrub-area">
           <div class="tick-labels"><span>DEPARTURE</span><span>THE LEGION</span><span>REINVENTION</span><span>LUXEMBOURG</span></div>
           <div class="scrub-track">
             <div class="track-line" aria-hidden="true"><div class="track-fill" id="track-fill"></div></div>
-            <input id="scrubber" class="scrubber" type="range" min="0" max="10" value="0" step="1" aria-label="Choose story chapter">
+            <input id="scrubber" class="scrubber" type="range" min="0" max="16" value="0" step="1" aria-label="Choose story chapter">
             <div class="chapter-dots" id="chapter-dots" aria-hidden="true"></div>
           </div>
         </div>
@@ -50,7 +52,7 @@
             <button class="button-plain icon-control" id="previous" type="button" aria-label="Previous chapter" title="Previous chapter">←</button>
             <button class="play-button" id="play-pause" type="button" aria-label="Play documentary"><span id="play-glyph" aria-hidden="true">▶</span><span id="play-label">PLAY STORY</span></button>
             <button class="button-plain icon-control" id="next" type="button" aria-label="Next chapter" title="Next chapter">→</button>
-            <div class="control-tip">USE ← → TO EXPLORE</div>
+            <button class="button-plain chapters-trigger" id="chapter-index-open" type="button" aria-haspopup="dialog" aria-controls="chapter-index-dialog">ALL CHAPTERS <span aria-hidden="true">☷</span></button><div class="control-tip">USE ← → TO EXPLORE</div>
           </div>
           <a href="#afterword" class="explore-link">BEYOND THE STORY <span aria-hidden="true">↓</span></a>
         </div>
@@ -73,6 +75,15 @@
       <footer>© <span id="year"></span> MAREK FELIKS <span>FELIKS.FR / PERSONAL DOCUMENTARY</span></footer>
     </section>
   </main>
+  <dialog id="chapter-index-dialog" class="chapter-index-dialog" aria-labelledby="chapter-index-title">
+    <div class="chapter-index-shell">
+      <header class="chapter-index-header">
+        <div><p class="chapter-index-overline">FELIKS / THE JOURNEY</p><h2 id="chapter-index-title">Choose a chapter.</h2><p class="chapter-index-subtitle">Explore the story in any order.</p></div>
+        <button type="button" class="chapter-index-close" id="chapter-index-close" aria-label="Close chapter index">✕</button>
+      </header>
+      <div id="chapter-index-list" class="chapter-index-list"></div>
+    </div>
+  </dialog>
   <noscript><div class="noscript-warning">The interactive story requires JavaScript. Enable JavaScript to explore the chapters.</div></noscript>
 </body>
 </html>
