@@ -1,4 +1,4 @@
-// Chapter index for the documentary. No dependencies or external requests.
+// Chapter index for the staged documentary. No dependencies or external requests.
 export function setupChapterIndex({story, navigate, getCurrent}) {
   const dialog = document.querySelector('#chapter-index-dialog');
   const openButton = document.querySelector('#chapter-index-open');
