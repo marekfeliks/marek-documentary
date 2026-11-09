@@ -11,6 +11,12 @@
   <title>FELIKS — A Journey Through Two Worlds</title>
   <link rel="stylesheet" href="./css/style.css">
   <script type="module" src="./js/app.js"></script>
+  <script>
+    // Hide referral/query parameters in the address bar; preserve chapter anchors.
+    if (window.location.search) {
+      window.history.replaceState(window.history.state, '', window.location.pathname + window.location.hash);
+    }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#chapter-title">Skip to the story</a>
