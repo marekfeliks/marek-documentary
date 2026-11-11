@@ -28,13 +28,14 @@
 
 /* The film must never crop its timeline when a chapter has a long title.
    Keep the controls in the fixed film footer; scroll only the narration area. */
-.film{min-height:0}
+.film{min-height:0;overflow:clip}
 .chapter-content{
   flex:1 1 auto;
   min-height:0;
   overflow-y:auto;
   overflow-x:hidden;
-  overscroll-behavior:contain;
+  /* Let a wheel or touch gesture continue to the page at the text area's edge. */
+  overscroll-behavior:auto;
   scrollbar-width:thin;
   scrollbar-color:#d7ac7777 transparent;
   display:flex;
@@ -142,7 +143,17 @@
   .atlas-heading h2{font-size:clamp(43px,8vw,70px)}
   .atlas-board{display:flex;flex-direction:column}
   .atlas-aside{border-left:0;border-top:1px solid #374d5c}
-  .atlas-current{min-height:100px}
+  /* Reserve the same space for every location, even long names on narrow screens.
+     Overflow remains readable without moving Previous / Next. */
+  .atlas-current{
+    flex:none;
+    min-height:0;
+    height:250px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    overscroll-behavior-y:auto;
+    justify-content:safe center;
+  }
   .atlas-svg{min-height:250px}
   .atlas-stop-heading span:last-child{display:none}
 }
