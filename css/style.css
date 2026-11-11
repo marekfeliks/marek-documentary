@@ -106,7 +106,7 @@
 .atlas-aside{border-left:1px solid #374d5c;padding:28px;display:flex;flex-direction:column;gap:22px;min-width:0}
 .atlas-aside-top{display:flex;justify-content:space-between;gap:12px;color:#d5b58d;font-size:9px;font-weight:bold;letter-spacing:.14em}
 #atlas-step{font-family:monospace;font-size:13px;color:#e8cb9d;letter-spacing:.06em}
-.atlas-current{flex:1;min-height:160px;display:flex;flex-direction:column;justify-content:flex-start}
+.atlas-current{flex:0 0 auto;height:165px;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:auto;display:flex;flex-direction:column;justify-content:flex-start}
 .atlas-current-context{font-size:11px;font-weight:bold;letter-spacing:.13em;color:#c49b67;text-transform:uppercase;line-height:1.5;margin:0 0 15px}
 .atlas-current h3{font-family:Georgia,serif;font-weight:400;font-size:clamp(31px,2.8vw,47px);line-height:1.1;letter-spacing:-.045em;margin:0 0 14px;overflow-wrap:anywhere}
 .atlas-current p:not(.atlas-current-context){color:#b8c7ce;line-height:1.55;font-size:15px;margin:0}
@@ -117,7 +117,7 @@
 .atlas-map-controls button:hover:not(:disabled),.atlas-replay:hover{background:#cda66e33}
 .atlas-map-controls button:disabled{opacity:.3;cursor:default}
 .atlas-replay{width:100%;background:transparent}
-.atlas-note{margin:0;color:#93a7b3;font-size:11px;line-height:1.6}
+.atlas-note{margin:auto 0 0;color:#93a7b3;font-size:11px;line-height:1.6}
 .atlas-stop-heading{max-width:1500px;margin:30px auto 14px;display:flex;justify-content:space-between;gap:15px;color:#a6b5bd;font-size:9px;letter-spacing:.14em;font-weight:bold}
 .atlas-stop-list{max-width:1500px;margin:auto;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(154px,205px);gap:8px;overflow-x:auto;overscroll-behavior-inline:contain;padding:4px 0 17px;scrollbar-width:thin;scrollbar-color:#ad9066 #1e303a}
 .atlas-stop{min-width:0;min-height:82px;text-align:left;background:#ffffff08;border:1px solid #5165736c;color:#d9e1e4;display:flex;flex-direction:column;justify-content:space-between;gap:8px;padding:13px}
@@ -143,17 +143,8 @@
   .atlas-heading h2{font-size:clamp(43px,8vw,70px)}
   .atlas-board{display:flex;flex-direction:column}
   .atlas-aside{border-left:0;border-top:1px solid #374d5c}
-  /* Reserve the same space for every location, even long names on narrow screens.
-     Overflow remains readable without moving Previous / Next. */
-  .atlas-current{
-    flex:none;
-    min-height:0;
-    height:250px;
-    overflow-y:auto;
-    overflow-x:hidden;
-    overscroll-behavior-y:auto;
-    justify-content:flex-start;
-  }
+  /* Keep map controls aligned across stops without a large blank text panel. */
+  .atlas-current{height:135px}
   .atlas-svg{min-height:250px}
   .atlas-stop-heading span:last-child{display:none}
 }
@@ -164,6 +155,7 @@
   .atlas-map-foot span:last-child{display:none}
   .atlas-svg{min-height:220px}
   .atlas-aside{padding:19px}
+  .atlas-current{height:152px}
   .atlas-stop-list{grid-auto-columns:155px}
   .afterword-actions{flex-direction:column}
 }
@@ -320,3 +312,6 @@
   .identity-line{font-size:11px;letter-spacing:.025em;line-height:1.4;margin-bottom:12px}
   .identity-line strong{letter-spacing:.07em}
 }
+
+/* Narrow screens need a few more lines for long location names. */
+@media(max-width:359px){.atlas-current{height:170px}}
