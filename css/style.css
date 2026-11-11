@@ -106,7 +106,7 @@
 .atlas-aside{border-left:1px solid #374d5c;padding:28px;display:flex;flex-direction:column;gap:22px;min-width:0}
 .atlas-aside-top{display:flex;justify-content:space-between;gap:12px;color:#d5b58d;font-size:9px;font-weight:bold;letter-spacing:.14em}
 #atlas-step{font-family:monospace;font-size:13px;color:#e8cb9d;letter-spacing:.06em}
-.atlas-current{flex:1;min-height:160px;display:flex;flex-direction:column;justify-content:center}
+.atlas-current{flex:1;min-height:160px;display:flex;flex-direction:column;justify-content:flex-start}
 .atlas-current-context{font-size:11px;font-weight:bold;letter-spacing:.13em;color:#c49b67;text-transform:uppercase;line-height:1.5;margin:0 0 15px}
 .atlas-current h3{font-family:Georgia,serif;font-weight:400;font-size:clamp(31px,2.8vw,47px);line-height:1.1;letter-spacing:-.045em;margin:0 0 14px;overflow-wrap:anywhere}
 .atlas-current p:not(.atlas-current-context){color:#b8c7ce;line-height:1.55;font-size:15px;margin:0}
@@ -152,7 +152,7 @@
     overflow-y:auto;
     overflow-x:hidden;
     overscroll-behavior-y:auto;
-    justify-content:safe center;
+    justify-content:flex-start;
   }
   .atlas-svg{min-height:250px}
   .atlas-stop-heading span:last-child{display:none}
